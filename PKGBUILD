@@ -9,7 +9,7 @@
 
 pkgname=geany-plugin-markdown
 _downloadname=geany-plugins
-pkgver=1.38
+pkgver=2.0
 pkgrel=1
 pkgdesc='Markdown plugin for Geany'
 arch=('x86_64')
@@ -19,7 +19,7 @@ depends=("geany>=$pkgver" 'webkit2gtk')
 makedepends=('intltool')
 #makedepends=('intltool' 'vala' 'gdb' 'cppcheck')
 source=("https://plugins.geany.org/$_downloadname/$_downloadname-$pkgver.tar.bz2")
-sha256sums=('1c578a7ebb390aa8882f195acd3d8da3ceb73925d291b28dec90cd3e5fd20586')
+sha256sums=('9fc2ec5c99a74678fb9e8cdfbd245d3e2061a448d70fd110a6aefb62dd514705')
 conflicts=('geany-plugins')
 
 build() {
@@ -27,7 +27,7 @@ build() {
 
   ./configure --prefix=/usr --libexecdir=/usr/lib \
               --disable-all-plugins --enable-markdown
-  make -C 'markdown'
+  make -C markdown
 }
 
 package() {
